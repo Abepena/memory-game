@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: whitesmoke;
+    padding: 4rem 7vw;
+    background: url(./webb.png);
+    font-family: "Major Mono Display", monospace;
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: auto, 1fr;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#title {
+    color: #222f3e;
+}
+#game {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+}
+
+img.back {
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.65);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.card {
+    position: relative;
+    height: 200px;
+    display: inline-block;
+    transition: box-shadow 0.2s ease-in-out, transform 0.3s ease-in-out;
+    transform-style: preserve-3d;
+    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.card:hover {
+    box-shadow: 10px 12px 15px 5px rgba(0, 0, 0, 0.1);
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 0.25rem;
+}
+
+.front {
+    transform: rotateX(0deg);
+    background: white;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* button */
+.nav-item {
+    background-color: #222f3e;
+    color: whitesmoke;
+    margin: 3rem 1rem 1rem 1rem;
+    padding: 0.75rem;
+    font-weight: bold;
+    font-size: 1.15rem;
+    border-radius: 0.25rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0px 6px 15px 4px rgba(0, 0, 0, 0.15);
+}
+
+@media screen and (max-width: 992px) {
+    #game {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (max-width: 767px) {
+    #game {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
