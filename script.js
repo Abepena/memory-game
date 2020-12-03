@@ -150,7 +150,7 @@ function handleCardClick(e) {
                 card2.classList.remove("flip");
                 card1 = null;
                 card2 = null;
-            }, 1000);
+            }, 700);
         }
     }
 
